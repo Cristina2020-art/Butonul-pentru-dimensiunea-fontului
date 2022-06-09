@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butonul pentru dimensiunea fontului</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="button">
+            <button type="button" class="btn btn-sm active">A</button>
+            <button type="button" class="btn btn-md">A</button>
+            <button type="button" class="btn btn-lg">A</button>
+        </div>
+        <div class="content">
+            <h2>Butonul pentru dimensiunea fontului</h2>
+            <p>Programator în informatică (din franceză: programmateur) este persoana care efectuează o activitate de programare, constând în fazele de concepere, proiectare, alcătuire (scriere), testare, integrare, înlăturarea eventualelor greșeli, și până la întreținerea de programe de calculator. Cuvântul programator se mai utilizează și pentru a desemna echipamentul pentru stabilirea conținutului (programarea) unei memorii permanente programabile. Uneori i se spune și „codificator”. 
+                <br><br>
+                Termenul provine tot din limba engleză de la systems programmer. Programatorul de sistem este persoana care se ocupă de instalarea / generarea și întreținerea sistemului de operare furnizat de producătorul unui calculator pentru a-l adapta la cerințele utilizatorului. Sistemul de operare este frecvent distribuit pe un suport de date într-o formă standard, conținând un maxim de funcțiuni. Din această formă standard programatorul de sistem poate instala sau genera un sistem de operare concret, potrivit configurației hardware individuale și nevoilor utilizatorului.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Inisialisasi
+        const btns = document.querySelectorAll('.btn');
+        const btnsm = document.querySelector('.btn-sm');
+        const btnmd = document.querySelector('.btn-md');
+        const btnlg = document.querySelector('.btn-lg');
+        const h2 = document.querySelector('.content h2');
+        const p = document.querySelector('.content p');
+
+        btns.forEach(btn => {
+            btn.onclick = function () {
+
+                // active
+                btns.forEach(btn => {
+                    btn.classList.remove('active');
+                })
+                btn.classList.add('active');
+
+                // Font Size
+                switch (btn.classList[1]) {
+                    case 'btn-sm':
+                        h2.style.fontSize = '1.5em';
+                        p.style.fontSize = '1em';
+                        break;
+                    case 'btn-md':
+                        h2.style.fontSize = '1.65em';
+                        p.style.fontSize = '1.15em';
+                        break;
+                    case 'btn-lg':
+                        h2.style.fontSize = '1.8em';
+                        p.style.fontSize = '1.3em';
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
